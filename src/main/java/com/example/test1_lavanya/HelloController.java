@@ -17,11 +17,11 @@ public class HelloController {
 
     public void login() throws Exception {
         if(failedTries>=5){
-            messageLabel.setText("Account is blocked");
+            messageLabel.setText("Sorry!! Your Account is blocked");
             return;
         }
         if(checkValues()){
-            messageLabel.setText("Please Provide username or password");
+            messageLabel.setText("Please Provide username or password" );
 
             return;
         }
@@ -31,8 +31,9 @@ public class HelloController {
             resetTries();
         }
         else{
-            messageLabel.setText("Sorry, Invalid Username or Password");
             failedTries+=1;
+
+            messageLabel.setText("Sorry, Invalid Username or Password\n"+(5-failedTries)+" -Attempts Left");
 
         }
 //        System.out.println(failedTries);
